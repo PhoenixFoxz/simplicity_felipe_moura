@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Raleway:wght@400;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body, h1, h2, p, figure, .menu {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Noto Sans', Verdana, Arial, sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 a{
+    background-color: red;
+    color: pink;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+h1 { 
+    text-transform: uppercase;
+    font-family: Raleway, sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+header {
+    z-index: 1;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+header .limitador {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav h2 a {
+    font-size: 1.2rem;
+    padding: 1rem;
+    display: inline-block;
+    color: black;
+}
+
+nav a:hover{
+    background-color: gray;
+}
+
+.menu {
+    list-style: none;
+    display: none;
+}
+
+.menu a {
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-weight: bolder;
+    align-items: center;
+    height: 50px;
+}
+
+/* ATENÇÃO
+A regra a baixo somente irá funcionar com o auxílio de programação JS 
+
+Objetivo: quando duas classes (menu e aberto) estiverem combinadas, o menu será exibido completamente.
+*/
+
+.menu.aberto {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    right: 0;    
+}
+
+.destaque {
+    background-image: url(../imagens/fundo-destaque.jpg);
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.destaque h2, .destaque p {
+    color: #ffffff;
+    text-align: center;
+}
+
+.destaque h2 {
+    font-size: clamp(3rem, 3rem + 0.8vw, 2vw);
+    font-family: Raleway, sans-serif;
+    font-weight: 800;
+}
+
+.destaque h2 {
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-family: 'Railaw', sans-serif;
+    font-weight: 800;
+    animation-name: animaDestaque;
+    animation-duration: 2s;
+}
+
+.destaque p {
+    font-size: clamp(1.2rem, 3vw, 3rem);
+    font-weight: bold;
+    animation-name: animaDestaque;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-out;
+
+}
+
+article h2{
+    padding: 1rem;
+    font-family: 'Raleway', sans-serif, Arial, Helvetica;
+    color: #6b6b6b;
+    font-size: 1.8rem;
+}
+
+@keyframes animaDestaque {
+    from {
+        opacity: 0;
+        transform: translateY(-600px);
+    }
+    to {
+       opacity: 1;
+    }
+}
+
+article p, article address {
+    padding: 0.5rem 0;
+    font-size: 1.3rem;
+}
+
+article address { font-style: normal; }
+
+.front-end, .historia, .localizacao, footer {
+    text-align: center;
+}
+
+.historia {
+    background-image: url(../imagens/fundo-madeira.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.historia h2 {
+    color: white;
+    text-shadow: 0 10px 10px black;
+}
+
+.historia iframe {
+    max-width: 700px;
+    margin-bottom: 2rem;
+}
+
+.localizacao iframe {
+    margin-top: 2rem;
+}
+
+.front-end figure {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;   
+}
+
+.limitador {
+    width: 95vw;
+    margin: auto;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    height: 30vh;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+iframe {
+    width: 100%;
+}
+
+.conteudo {
+    background-color: #fbfbfb;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.conteudo h2 {
+    padding-left: 0;
+    text-align: center;
+}
+
+table, th, td{
+    border: black solid 2px;
+    border-collapse: collapse;
+}
+
+table {
+    margin: auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+caption {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+}
+
+th {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+td {
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+td:nth-child(2){
+    text-align: center;
+}
+
+/* Produtos */
+td:first-child{
+    text-transform: uppercase;
+} 
+
+td:last-child{
+    text-align: right;
+    font-weight: bold;
+}
+
+tr:nth-child(odd){
+    background-color: lightgrey;
+}
+
+tr:nth-child(even){
+    background-color: white;
+}
+
+.galeria_servico img{
+    filter: grayscale(100%);
+    transition: 0.3s;
+    border-radius: 100%;
+    box-shadow: 0 0 15px black;
+    margin: 10px;
+}
+
+.galeria_servico {
+    text-align: center;
+}
+
+.galeria_servico img:hover {
+    filter: none;
+    transform: scale(1.1);
+} 
+
+form {
+    width: 95%;
+    margin: auto;
+    padding: 1rem;
+}
+
+form div {
+    margin-top: 1rem;
+}
+
+input:not([type=radio], [type=checkbox]), select, textarea {
+    border: none;
+    padding: 8px;
+    width: 100%;
+    box-shadow: darkgray 0 0 5px;
+    height: 40px;
+    font-size: 1.1rem;
+}
+
+/* Devolvendo o tamanho da altura padrão SOMENTE para o textarea */
+textarea { 
+    height: auto; 
+    max-width: 100%;
+    max-height: 400px;
+}
+
+/* Regra dos nomes/rótulos de cada campo */
+label { font-size: 1.2rem; }
+
+button {
+    border: none;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+button:hover, button:focus {
+    cursor: pointer;
+    background-color: purple;
+}
+
+@media screen and (min-width: 530px){
+    nav h2 { display: none;}
+    .menu {
+        display: flex;
+    }
+     
+    nav {
+        width: 70%;
+    }
+
+    .menu li {
+        width: 100%;
+        text-transform: uppercase;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    html {
+        font-size: 16px;
+    }
+
+    .limitador {
+        max-width: 1000px;
+    }
+}
